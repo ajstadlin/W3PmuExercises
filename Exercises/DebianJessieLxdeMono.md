@@ -15,7 +15,7 @@ This is a *cookbook recipe* style exercise procedure for setting up a Debian Jes
         - [`W3PMU-D86LM` Debian Virtual Machine](#w3pmu-d86lm-debian-virtual-machine)
     - [Host Server Setup](#host-server-setup)
         - [DNS Configuration](#dns-configuration)
-        - [Virtual Machine Setup](#virtual-machines-setup)
+        - [Virtual Machine Setup](#virtual-machine-setup)
 - [`W3PMU-D86LM` Virtual Machine Initial Setup](#w3pmu-d86lm-virtual-machine-initial-setup)
     - [`W3PMU-D86LM` Configuration](#w3pmu-d86lm-configuration)
 - [`W3PMU-D86LM` Software and Utilities Installation](#w3pmu-d86lm-software-and-utilities-installation)
@@ -85,7 +85,7 @@ Do the following on the *Host Server*:
 5. Run `ipconfig /flushdns` to clear the local DNS cache
 6. Run `ping w3pmu-vbox.w3pmu.com` to make sure the new *hosts* file changes are in effect
 
-#### VirtualBox Virtual Machines Setup
+#### Virtual Machine Setup
 
 This example uses a minimal installation with [Debian 8.6.0 netinst.iso for amd64](http://mirrors.kernel.org/debian-cd/8.6.0/amd64/iso-cd/debian-8.6.0-amd64-netinst.iso) from [Mirrors.Kernel.org](http://mirrors.kernel.org).
 
