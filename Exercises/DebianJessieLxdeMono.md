@@ -11,7 +11,7 @@ This is a *cookbook recipe* style exercise procedure for setting up a Debian Jes
 - [Platform](#platform)
     - [Platform Description](#platform-description)
     - [Platform Configuration](#platform-configuration)
-        - [`W3PMU-VBOX` VirtualBox Host Server](#w3pmu-vbox-virtualbox-host-host-server)
+        - [`W3PMU-VBOX` VirtualBox Host Server](#w3pmu-vbox-virtualbox-host-server)
         - [`W3PMU-D86LM` Debian Virtual Machine](#w3pmu-d86lm-debian-virtual-machine)
     - [Host Server Setup](#host-server-setup)
         - [DNS Configuration](#dns-configuration)
@@ -38,14 +38,14 @@ The virtual machines are created with a clean operating system and software inst
 
 ### Platform Configuration
 
-#### `W3PMU-VBOX` Host Server
+#### `W3PMU-VBOX` VirtualBox Host Server
     - Windows 10 Enterprise 2016 LTSB with Oracle VirtualBox 5.1.12 for hosting virtual machines
     - Software = [Oracle VirtualBox](http://www.virtualbox.org)
     - CPU = Intel i7, 2.8GHz, Laptop
     - RAM = 16GB, 2133 MHz, non-ECC
     - WiFi Ethernet with Internet access
 
-#### `W3PMU-D86LM` Virtual Machine
+#### `W3PMU-D86LM` Debian Virtual Machine
     - OS = Debian Jessie 8.6.0 amd64 from netinst.iso 
     - Software = [mono](http://www.mono-project.com/)
     - CPU = 3 virtual cores
@@ -94,8 +94,8 @@ This example uses a minimal installation with [Debian 8.6.0 netinst.iso for amd6
 ## `W3PMU-D86LM` Virtual Machine Initial Setup
 
 1. Download the `debian-8.6.0-amd64-netinst.iso` file to the [`W3PMU-VBOX`](#w3pmu-vbox-virtualbox-host-server) server
-2. On the [`W3PMU-VBOX`](#w3pmu-vbox-virtualbox-host-server) server: create the [`W3PMU-D86LM`](#w3pmu-d86lm-virtual-machine) virtual machine
-    - Configure [`W3PMU-D86LM`](#w3pmu-d86lm-virtual-machine) VirtualBox *Settings* as described in the earlier [Platform Configuration](#platform-configuration) section and assign the `debian-8.6.0-amd64-netinst.iso` image file to its DVD drive.
+2. On the [`W3PMU-VBOX`](#w3pmu-vbox-virtualbox-host-server) server: create the [`W3PMU-D86LM`](#w3pmu-d86lm-debian-virtual-machine) virtual machine
+    - Configure [`W3PMU-D86LM`](#w3pmu-d86lm-debian-virtual-machine) VirtualBox *Settings* as described in the earlier [Platform Configuration](#platform-configuration) section and assign the `debian-8.6.0-amd64-netinst.iso` image file to its DVD drive.
 3. Start the `W3PMU-D86LM` virtual machine and run the Debian installation. 
 	- In the *Configure the network / Please enter the hostname* dialog, set the *Hostname* to `w3pmu-d86lm` then press the *Enter* key to *Continue*
 	- In the *Configure the network / Domain Name* dialog, set the *Domain name* to `w3pmu.com` then press the *Enter* key to *Continue*
