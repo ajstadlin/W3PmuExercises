@@ -94,11 +94,11 @@ This example uses a minimal installation with [Debian 8.6.0 netinst.iso for amd6
 ## `W3PMU-D86LM` Virtual Machine Initial Setup
 
 1. Download the `debian-8.6.0-amd64-netinst.iso` file to the [`W3PMU-VBOX`](#w3pmu-vbox-virtualbox-host-server) server
-2. On the [`GPA-VBOX`](#w3pmu-vbox-virtualbox-host-server) server: create the [`W3PMU-D86LM`](#w3pmu-d86lm-virtual-machine) virtual machine
-    - Configure [`OPDC-D86`](#opdc-d86-openpdc-server-virtual-machine) VirtualBox *Settings* as described in the earlier [Platform Configuration](#platform-configuration) section and assign the `debian-8.6.0-amd64-netinst.iso` image file to its DVD drive.
-3. Start the `OPDC-D86` virtual machine and run the Debian installation. 
-	- In the *Configure the network / Please enter the hostname* dialog, set the *Hostname* to `opdc-d86` then press the *Enter* key to *Continue*
-	- In the *Configure the network / Domain Name* dialog, set the *Domain name* to `gpa.net` then press the *Enter* key to *Continue*
+2. On the [`W3PMU-VBOX`](#w3pmu-vbox-virtualbox-host-server) server: create the [`W3PMU-D86LM`](#w3pmu-d86lm-virtual-machine) virtual machine
+    - Configure [`W3PMU-D86LM`](#w3pmu-d86lm-virtual-machine) VirtualBox *Settings* as described in the earlier [Platform Configuration](#platform-configuration) section and assign the `debian-8.6.0-amd64-netinst.iso` image file to its DVD drive.
+3. Start the `W3PMU-D86LM` virtual machine and run the Debian installation. 
+	- In the *Configure the network / Please enter the hostname* dialog, set the *Hostname* to `w3pmu-d86lm` then press the *Enter* key to *Continue*
+	- In the *Configure the network / Domain Name* dialog, set the *Domain name* to `w3pmu.com` then press the *Enter* key to *Continue*
 	- When prompted to enter Passwords, do not use symbols in common with SQL or shell scripting
 	- Continue with disk setup stuff and *Installing the base system*
 	- Continue with selecting a download mirror and *Configuring apt*
