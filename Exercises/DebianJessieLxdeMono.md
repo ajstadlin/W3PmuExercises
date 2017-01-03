@@ -22,6 +22,9 @@ This is a *cookbook recipe* style exercise procedure for setting up a Debian Jes
     - [Git](#git)
     - [Python](#python)
     - [Mono](#mono)
+- [`W3PMU-D86LM` X11 and LXDE Installation](#w3pmu-d86lm-x11-and-lxde-installation)
+	- [Install Optional Utility Software](#install-optional-utility-software)
+	- [Disable Console Screen Blanking](#disable-console-screen-blanking)
 
 ---
 
@@ -145,7 +148,7 @@ $ reboot
 
 ---
 
-## `W3PMU-D86LM` Server Software and Utilities Installation
+## `W3PMU-D86LM` Software and Utilities Installation
 
 Now that the base Debian operating system is installed and the machine has an IP address, it is probably easier to access the `W3PMU-D86LM` machine using an **ssh** client that allows copy/paste clipboard. If you are running VirtualBox on a Windows *Host Server* as described for this exercise's `W3PMU-VBOX` laptop, then using Git's MINGW bash shell has a nice **ssh** console. In the Git console, simply run `ssh <your_username>@w3pmu-d86lm`
 
@@ -218,7 +221,7 @@ mono --version
 
 ---
 
-## X11 Installation
+## `W3PMU-D86LM` X11 and LXDE Installation
 
 GUI installation instructions are derived from the procedure described in: [GUIDE Raspbian Lite with LXDE/XFCE/MATE/Openbox GUI](https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=133691)
 
@@ -240,12 +243,18 @@ sudo nano /etc/lightdm/lightdm.conf
 	autologin-user=pi
 	autologin-user-timeout=0
 sudo dpkg-reconfigure lightdm
+```
 
-# install optional utility software
+### Install Optional Utility Software
+
+```
 sudo apt-get install htop ntp ntpdate freerdp-x11 x11vnc lxterminal leafpad clipit -y
 sudo reboot
+```
 
-# Disable Console Screen Blanking
+### Disable Console Screen Blanking
+
+```
 sudo nano /etc/X11/xorg.conf
 Section "Monitor"
     Identifier "Monitor"
