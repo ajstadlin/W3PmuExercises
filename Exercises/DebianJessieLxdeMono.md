@@ -232,8 +232,8 @@ sudo apt-get install xinit x11-xserver-utils
 sudo reboot
 
 sudo apt-get update
-sudo apt-get dist-upgrade
-sudo apt-get install lxde-core --fix-missing
+sudo apt-get dist-upgradesudo apt-get install raspberrypi-ui-mods
+# sudo apt-get install lxde-core --fix-missing
 sudo reboot
 ... login ...
 startx
