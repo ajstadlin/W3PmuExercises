@@ -237,7 +237,6 @@ sudo apt-get dist-upgrade
 
 # Raspbian Jan 11, 2017 physical mouse and keyboard no longer working
 # Under Reconstruction, testing the following:
-# sudo apt-get install xserver-xorg-input-all
 # sudo apt-get install rpi-update
 # sudo rpi-update
 # sudo apt-get install raspberrypi-ui-mods
