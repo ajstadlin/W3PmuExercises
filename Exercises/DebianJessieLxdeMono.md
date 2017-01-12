@@ -228,12 +228,14 @@ GUI installation instructions are derived from the procedure described in: [GUID
 ```
 sudo apt-get install xserver-xorg 
 # sudo apt-get install xserver-xorg --no-install-recommends
-sudo apt-get install xinit x11-xserver-utils
+sudo apt-get install xinit x11-xserver-utils xorg
 sudo reboot
 
 sudo apt-get update
-sudo apt-get dist-upgradesudo apt-get install raspberrypi-ui-mods
-# sudo apt-get install lxde-core --fix-missing
+sudo apt-get dist-upgrade
+# Raspbian Pixel
+# sudo apt-get install raspberrypi-ui-mods
+sudo apt-get install lxde-core --fix-missing
 sudo reboot
 ... login ...
 startx
