@@ -232,9 +232,18 @@ sudo apt-get install xinit x11-xserver-utils xorg
 sudo reboot
 
 sudo apt-get update
+sudo apt-get upgrade
 sudo apt-get dist-upgrade
-# Raspbian Pixel
+
+# Raspbian Jan 11, 2017 physical mouse and keyboard no longer working
+# Under Reconstruction, testing the following:
+# sudo apt-get install xserver-xorg-input-all
+# sudo apt-get install rpi-update
+# sudo rpi-update
 # sudo apt-get install raspberrypi-ui-mods
+# sudo apt-get install xserver-xorg-input-evdev
+# # does this exist?: /usr/share/X11/xorg.conf.d/10-evdev.conf
+
 sudo apt-get install lxde-core --fix-missing
 sudo reboot
 ... login ...
