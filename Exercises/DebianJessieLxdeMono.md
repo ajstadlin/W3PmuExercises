@@ -22,7 +22,7 @@ This is a *cookbook recipe* style exercise procedure for setting up a Debian Jes
     - [Git](#git)
     - [Python](#python)
     - [Mono](#mono)
-        - [Install Mono from the Mono Project Debian Package](#install-mono-from-the-mono-project-debian-packages)
+        - [Install Mono from the Mono Project Debian Packages](#install-mono-from-the-mono-project-debian-packages)
         - [Build Mono from a release tarball](#build-mono-from-a-release-tarball)
 - [`W3PMU-D86LM` X11 and LXDE Installation](#w3pmu-d86lm-x11-and-lxde-installation)
 	- [Install Optional Utility Software](#install-optional-utility-software)
@@ -210,7 +210,6 @@ python3 --version
 ```sh
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
-sudo apt-get update
 echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
 echo "deb http://download.mono-project.com/repo/debian wheezy-libjpeg62-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
 sudo apt-get update
