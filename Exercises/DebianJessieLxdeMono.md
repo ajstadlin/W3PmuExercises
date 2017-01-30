@@ -22,6 +22,8 @@ This is a *cookbook recipe* style exercise procedure for setting up a Debian Jes
     - [Git](#git)
     - [Python](#python)
     - [Mono](#mono)
+    	- [Install Mono from the Mono Project Debian Package](#install-mono-from-the-mono-project-debian-packages)
+	- [Build Mono from a release tarball](#build-mono-from-a-release-tarball)
 - [`W3PMU-D86LM` X11 and LXDE Installation](#w3pmu-d86lm-x11-and-lxde-installation)
 	- [Install Optional Utility Software](#install-optional-utility-software)
 	- [Disable Console Screen Blanking](#disable-console-screen-blanking)
@@ -200,7 +202,29 @@ python3 --version
 
 ### Mono
 
-Build Mono from a release tarball.   
+#### Install Mono from the Mono Project Debian Packages
+
+- Use this procedure if you are planning to install [MonoDevelop](http://www.monodevelop.com/)
+- Reference: [Install for Debian, Ubuntu, and derivatives](http://www.mono-project.com/docs/getting-started/install/linux/#debian-ubuntu-and-derivatives)
+
+```sh
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
+sudo apt-get update
+echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
+echo "deb http://download.mono-project.com/repo/debian wheezy-libjpeg62-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install mono-devel -y
+sudo apt-get install mono-complete -y
+sudo apt-get install referenceassemblies-pcl -y
+sudo apt-get install ca-certificates-mono
+# sudo apt-get install mono-xsp4
+```
+
+#### Build Mono from a release tarball
+
+- This is an alternative to installing from a Debian package
 
 ```sh
 # Install dependencies.  
