@@ -165,9 +165,9 @@ sudo apt-get install build-essential gettext libssl-dev libcurl4-openssl-dev lib
 # Change to Home folder
 cd ~
 # Get git
-wget https://www.kernel.org/pub/software/scm/git/git-2.11.0.tar.gz 
-tar -xzvf git-2.11.0.tar.gz
-cd git-2.11.0
+wget https://www.kernel.org/pub/software/scm/git/git-2.11.1.tar.gz 
+tar -xzvf git-2.11.1.tar.gz
+cd git-2.11.1
 # Make Git and Install 
 make prefix=/usr/local all doc info
 sudo make prefix=/usr/local install all install-doc install-html install-info
