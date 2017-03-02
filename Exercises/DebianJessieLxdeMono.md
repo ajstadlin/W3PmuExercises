@@ -12,19 +12,19 @@ This is a *cookbook recipe* style exercise procedure for setting up a Debian Jes
     - [Platform Description](#platform-description)
     - [Platform Configuration](#platform-configuration)
         - [`W3PMU-VBOX` VirtualBox Host Server](#w3pmu-vbox-virtualbox-host-server)
-        - [`W3PMU-D86LM` Debian Virtual Machine](#w3pmu-d86lm-debian-virtual-machine)
+        - [`W3PMU-DEBLM` Debian Virtual Machine](#w3pmu-deblm-debian-virtual-machine)
     - [Host Server Setup](#host-server-setup)
         - [DNS Configuration](#dns-configuration)
         - [Virtual Machine Setup](#virtual-machine-setup)
-- [`W3PMU-D86LM` Virtual Machine Initial Setup](#w3pmu-d86lm-virtual-machine-initial-setup)
-    - [`W3PMU-D86LM` Configuration](#w3pmu-d86lm-configuration)
-- [`W3PMU-D86LM` Software and Utilities Installation](#w3pmu-d86lm-software-and-utilities-installation)
+- [`W3PMU-DEBLM` Virtual Machine Initial Setup](#w3pmu-deblm-virtual-machine-initial-setup)
+    - [`W3PMU-DEBLM` Configuration](#w3pmu-deblm-configuration)
+- [`W3PMU-DEBLM` Software and Utilities Installation](#w3pmu-deblm-software-and-utilities-installation)
     - [Git](#git)
     - [Python](#python)
     - [Mono](#mono)
         - [Install Mono from the Mono Project Debian Packages](#install-mono-from-the-mono-project-debian-packages)
         - [Build Mono from a release tarball](#build-mono-from-a-release-tarball)
-- [`W3PMU-D86LM` X11 and LXDE Installation](#w3pmu-d86lm-x11-and-lxde-installation)
+- [`W3PMU-DEBLM` X11 and LXDE Installation](#w3pmu-deblm-x11-and-lxde-installation)
 	- [Install Optional Utility Software](#install-optional-utility-software)
 	- [Disable Console Screen Blanking](#disable-console-screen-blanking)
 
@@ -47,8 +47,8 @@ The virtual machines are created with a clean operating system and software inst
     - RAM = 16GB, 2133 MHz, non-ECC
     - WiFi Ethernet with Internet access
 
-#### `W3PMU-D86LM` Debian Virtual Machine
-    - OS = Debian Jessie 8.6.0 amd64 from netinst.iso 
+#### `W3PMU-DEBLM` Debian Virtual Machine
+    - OS = Debian Jessie 8.7.1 amd64 from netinst.iso 
     - Software = [mono](http://www.mono-project.com/)
     - CPU = 3 virtual cores
     - RAM = 3072 MB
@@ -76,30 +76,30 @@ Do the following on the *Host Server*:
 	- Record the IPv4 Address.
 	- Record the Default Gateway  
 	- Record the DNS Server's IP Address
-3. Run `ping 192.168.1.142` to test the IPv4 Address we will be assigning to the `W3PMU-D86LM` virtual machine
+3. Run `ping 192.168.1.142` to test the IPv4 Address we will be assigning to the `W3PMU-DEBLM` virtual machine
     - Run `arp -a` to verify that 192.168.1.142 is not being used by any other MAC addresses.
     - If 192.168.1.142 is listed in the `arp -a` list, then pick a different IP address and test again
 4. Run `notepad C:\Windows\system32\drivers\etc\hosts` and add the following entries
     - `192.168.1.140     w3pmu-vbox.w3pmu.com`
     - `192.168.1.140     W3PMU-VBOX`
-    - `192.168.1.142     w3pmu-d86lm.w3pmu.com`
-    - `192.168.1.142     W3PMU-D86LM`
+    - `192.168.1.142     w3pmu-deblm.w3pmu.com`
+    - `192.168.1.142     W3PMU-DEBLM`
 5. Run `ipconfig /flushdns` to clear the local DNS cache
 6. Run `ping w3pmu-vbox.w3pmu.com` to make sure the new *hosts* file changes are in effect
 
 #### Virtual Machine Setup
 
-This example uses a minimal installation with [Debian 8.6.0 netinst.iso for amd64](http://mirrors.kernel.org/debian-cd/8.6.0/amd64/iso-cd/debian-8.6.0-amd64-netinst.iso) from [Mirrors.Kernel.org](http://mirrors.kernel.org).
+This example uses a minimal installation with [Debian 8.7.1 netinst.iso for amd64](http://mirrors.kernel.org/debian-cd/8.7.1/amd64/iso-cd/debian-8.7.1-amd64-netinst.iso) from [Mirrors.Kernel.org](http://mirrors.kernel.org).
 
 ---
 
-## `W3PMU-D86LM` Virtual Machine Initial Setup
+## `W3PMU-DEBLM` Virtual Machine Initial Setup
 
-1. Download the `debian-8.6.0-amd64-netinst.iso` file to the [`W3PMU-VBOX`](#w3pmu-vbox-virtualbox-host-server) server
-2. On the [`W3PMU-VBOX`](#w3pmu-vbox-virtualbox-host-server) server: create the [`W3PMU-D86LM`](#w3pmu-d86lm-debian-virtual-machine) virtual machine
-    - Configure [`W3PMU-D86LM`](#w3pmu-d86lm-debian-virtual-machine) VirtualBox *Settings* as described in the earlier [Platform Configuration](#platform-configuration) section and assign the `debian-8.6.0-amd64-netinst.iso` image file to its DVD drive.
-3. Start the `W3PMU-D86LM` virtual machine and run the Debian installation. 
-	- In the *Configure the network / Please enter the hostname* dialog, set the *Hostname* to `w3pmu-d86lm` then press the *Enter* key to *Continue*
+1. Download the `debian-8.7.1-amd64-netinst.iso` file to the [`W3PMU-VBOX`](#w3pmu-vbox-virtualbox-host-server) server
+2. On the [`W3PMU-VBOX`](#w3pmu-vbox-virtualbox-host-server) server: create the [`W3PMU-DEBLM`](#w3pmu-deblm-debian-virtual-machine) virtual machine
+    - Configure [`W3PMU-DEBLM`](#w3pmu-deblm-debian-virtual-machine) VirtualBox *Settings* as described in the earlier [Platform Configuration](#platform-configuration) section and assign the `debian-8.7.1-amd64-netinst.iso` image file to its DVD drive.
+3. Start the `W3PMU-DEBLM` virtual machine and run the Debian installation. 
+	- In the *Configure the network / Please enter the hostname* dialog, set the *Hostname* to `w3pmu-deblm` then press the *Enter* key to *Continue*
 	- In the *Configure the network / Domain Name* dialog, set the *Domain name* to `w3pmu.com` then press the *Enter* key to *Continue*
 	- When prompted to enter Passwords, do not use symbols in common with SQL or shell scripting
 	- Continue with disk setup stuff and *Installing the base system*
@@ -109,7 +109,7 @@ This example uses a minimal installation with [Debian 8.6.0 netinst.iso for amd6
 	- Continue and complete the remaining installation
 	- Reboot
 
-### `W3PMU-D86LM` Configuration
+### `W3PMU-DEBLM` Configuration
 
 - 1. Login with the User account created during initial setup
 - 2. Run `su` and enter the `root` account password
@@ -150,9 +150,9 @@ $ reboot
 
 ---
 
-## `W3PMU-D86LM` Software and Utilities Installation
+## `W3PMU-DEBLM` Software and Utilities Installation
 
-Now that the base Debian operating system is installed and the machine has an IP address, it is probably easier to access the `W3PMU-D86LM` machine using an **ssh** client that allows copy/paste clipboard. If you are running VirtualBox on a Windows *Host Server* as described for this exercise's `W3PMU-VBOX` laptop, then using Git's MINGW bash shell has a nice **ssh** console. In the Git console, simply run `ssh <your_username>@w3pmu-d86lm`
+Now that the base Debian operating system is installed and the machine has an IP address, it is probably easier to access the `W3PMU-DEBLM` machine using an **ssh** client that allows copy/paste clipboard. If you are running VirtualBox on a Windows *Host Server* as described for this exercise's `W3PMU-VBOX` laptop, then using Git's MINGW bash shell has a nice **ssh** console. In the Git console, simply run `ssh <your_username>@w3pmu-deblm`
 
 ### Git
 
@@ -165,9 +165,9 @@ sudo apt-get install build-essential gettext libssl-dev libcurl4-openssl-dev lib
 # Change to Home folder
 cd ~
 # Get git
-wget https://www.kernel.org/pub/software/scm/git/git-2.11.1.tar.gz 
-tar -xzvf git-2.11.1.tar.gz
-cd git-2.11.1
+wget https://www.kernel.org/pub/software/scm/git/git-2.12.0.tar.gz 
+tar -xzvf git-2.12.0.tar.gz
+cd git-2.12.0
 # Make Git and Install 
 make prefix=/usr/local all doc info
 sudo make prefix=/usr/local install all install-doc install-html install-info
@@ -182,18 +182,18 @@ Python might be required for properly building or testing mono
 ```sh
 # Python 2
 cd ~/
-wget https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tar.xz
-tar -xvf Python-2.7.12.tar.xz
-cd Python-2.7.12
+wget https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tar.xz
+tar -xvf Python-2.7.13.tar.xz
+cd Python-2.7.13
 ./configure
 make
 sudo make install
 python2 --version
 # Python 3
 cd ~/
-wget https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tar.xz 
-tar -xvf Python-3.5.2.tar.xz
-cd Python-3.5.2
+wget https://www.python.org/ftp/python/3.5.2/Python-3.6.0.tar.xz 
+tar -xvf Python-3.6.0.tar.xz
+cd Python-3.6.0
 ./configure
 make
 sudo make install
@@ -244,7 +244,7 @@ mono --version
 
 ---
 
-## `W3PMU-D86LM` X11 and LXDE Installation
+## `W3PMU-DEBLM` X11 and LXDE Installation
 
 GUI installation instructions are derived from the procedure described in: [GUIDE Raspbian Lite with LXDE/XFCE/MATE/Openbox GUI](https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=133691)
 
@@ -316,7 +316,8 @@ setterm -blank 0 -powersave off -powerdown 0 >/dev/console
 
 ---
 
-Jan 02, 2017 - Created by [aj](https://github.com/ajstadlin)
+Mar 2, 2017 - Updated by [aj](https://github.com/ajstadlin)  
+Jan 2, 2017 - Created by [aj](https://github.com/ajstadlin)
 
 ---
 
