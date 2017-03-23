@@ -165,9 +165,9 @@ sudo apt-get install build-essential gettext libssl-dev libcurl4-openssl-dev lib
 # Change to Home folder
 cd ~
 # Get git
-wget https://www.kernel.org/pub/software/scm/git/git-2.12.0.tar.gz 
-tar -xzvf git-2.12.0.tar.gz
-cd git-2.12.0
+wget https://www.kernel.org/pub/software/scm/git/git-2.12.1.tar.gz 
+tar -xzvf git-2.12.1.tar.gz
+cd git-2.12.1
 # Make Git and Install 
 make prefix=/usr/local all doc info
 sudo make prefix=/usr/local install all install-doc install-html install-info
@@ -191,9 +191,9 @@ sudo make install
 python2 --version
 # Python 3
 cd ~/
-wget https://www.python.org/ftp/python/3.5.2/Python-3.6.0.tar.xz 
-tar -xvf Python-3.6.0.tar.xz
-cd Python-3.6.0
+wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tar.xz 
+tar -xvf Python-3.6.1.tar.xz
+cd Python-3.6.1
 ./configure
 make
 sudo make install
