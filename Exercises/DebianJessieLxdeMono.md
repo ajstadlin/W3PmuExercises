@@ -20,6 +20,7 @@ This is a *cookbook recipe* style exercise procedure for setting up a Debian Jes
     - [`W3PMU-DEBLM` Configuration](#w3pmu-deblm-configuration)
 - [`W3PMU-DEBLM` Software and Utilities Installation](#w3pmu-deblm-software-and-utilities-installation)
     - [Git](#git)
+    - [NTP](#ntp)
     - [Python](#python)
     - [Mono](#mono)
         - [Install Mono from the Mono Project Debian Packages](#install-mono-from-the-mono-project-debian-packages)
@@ -27,7 +28,7 @@ This is a *cookbook recipe* style exercise procedure for setting up a Debian Jes
 - [`W3PMU-DEBLM` X11 and LXDE Installation](#w3pmu-deblm-x11-and-lxde-installation)
 	- [Install Optional Utility Software](#install-optional-utility-software)
 	- [Disable Console Screen Blanking](#disable-console-screen-blanking)
-
+        - [XSet Keyboard Repeat Rate](#xset-keyboard-repeat-rate)
 ---
 
 ## Platform
@@ -175,6 +176,26 @@ sudo make prefix=/usr/local install all install-doc install-html install-info
 git –version
 ```
 
+### NTP
+
+Network Time Protocol *NTP* is used to synchronize the computer's time clock with reference time server.
+
+- Reference: [Install and Configure NTP in Debian](http://www.tecmint.com/install-and-configure-ntp-server-client-in-debian/)
+- Reference: [NIST Internet Time Servers](http://tf.nist.gov/tf-cgi/servers.cgi)
+
+```sh
+# Install NTP
+sudo apt-get install ntp
+# Optionally modify the time servers and other ntp options
+sudn nano /etc/ntp.conf
+# Apply configuration changes
+sudo dpkg-reconfigure ntp
+# Check
+sudo ntpd --version
+sudo ntpq -p
+sudo service ntp status
+```
+
 ### Python
 
 Python might be required for properly building or testing mono
@@ -283,7 +304,7 @@ sudo dpkg-reconfigure lightdm
 ### Install Optional Utility Software
 
 ```
-sudo apt-get install htop ntp ntpdate freerdp-x11 x11vnc lxterminal leafpad clipit -y
+sudo apt-get install htop ntpdate freerdp-x11 x11vnc lxterminal leafpad clipit -y
 sudo reboot
 ```
 
@@ -314,9 +335,16 @@ setterm -blank 0 -powersave off -powerdown 0
 setterm -blank 0 -powersave off -powerdown 0 >/dev/console
 ```
 
+### XSet Keyboard Repeat Rate
+
+```sh
+# I like it a bit faster than default
+sudo xset r rate 180 40
+```
+
 ---
 
-Mar 2, 2017 - Updated by [aj](https://github.com/ajstadlin)  
+Mar 28, 2017 - Updated by [aj](https://github.com/ajstadlin)  
 Jan 2, 2017 - Created by [aj](https://github.com/ajstadlin)
 
 ---
