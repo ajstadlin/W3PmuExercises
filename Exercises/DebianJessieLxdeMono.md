@@ -28,7 +28,8 @@ This is a *cookbook recipe* style exercise procedure for setting up a Debian Jes
 - [`W3PMU-DEBLM` X11 and LXDE Installation](#w3pmu-deblm-x11-and-lxde-installation)
 	- [Install Optional Utility Software](#install-optional-utility-software)
 	- [Disable Console Screen Blanking](#disable-console-screen-blanking)
-        - [XSet Keyboard Repeat Rate](#xset-keyboard-repeat-rate)
+	- [XSet Keyboard Repeat Rate](#xset-keyboard-repeat-rate)
+	
 ---
 
 ## Platform
