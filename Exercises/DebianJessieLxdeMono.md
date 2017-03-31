@@ -163,7 +163,8 @@ Building *Git* is not really required to install and run *openPDC*, however, dow
 ```sh
 # Install Git prerequisites
 sudo apt-get install ca-certificates xz-utils -y
-sudo apt-get install build-essential gettext libssl-dev libcurl4-openssl-dev libexpat1-dev tk-dev asciidoc docbook2x unzip -y
+sudo apt-get install build-essential gettext libssl-dev libcurl4-openssl-dev libexpat1-dev tk-dev asciidoc -y
+# sudo apt-get install docbook2x unzip -y
 # Change to Home folder
 cd ~
 # Get git
@@ -171,8 +172,10 @@ wget https://www.kernel.org/pub/software/scm/git/git-2.12.2.tar.gz
 tar -xzvf git-2.12.2.tar.gz
 cd git-2.12.2
 # Make Git and Install 
-make prefix=/usr/local all doc info
-sudo make prefix=/usr/local install all install-doc install-html install-info
+make prefix=/usr/local all 
+# make prefix=/usr/local all doc info
+sudo make prefix=/usr/local install all 
+# sudo make prefix=/usr/local install all install-doc install-html install-info
 # Test Git
 git –version
 ```
