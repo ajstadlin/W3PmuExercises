@@ -205,6 +205,8 @@ sudo service ntp status
 Python might be required for properly building or testing mono
 
 ```sh
+# remove previous python version
+sudo apt-get purge python
 # Python 2
 cd ~/
 wget https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tar.xz
@@ -223,6 +225,9 @@ cd Python-3.6.1
 make
 sudo make install
 python3 --version
+# now check to see the default python version
+sudo reboot
+python --version
 ```
 
 ### Mono
