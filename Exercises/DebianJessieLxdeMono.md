@@ -353,7 +353,7 @@ sudo xset r rate 180 40
 
 ---
 
-Mar 28, 2017 - Updated by [aj](https://github.com/ajstadlin)  
+Mar 31, 2017 - Updated by [aj](https://github.com/ajstadlin)  
 Jan 2, 2017 - Created by [aj](https://github.com/ajstadlin)
 
 ---
