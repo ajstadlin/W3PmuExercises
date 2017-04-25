@@ -351,6 +351,19 @@ setterm -blank 0 -powersave off -powerdown 0 >/dev/console
 sudo xset r rate 180 40
 ```
 
+### Autostart Application Example
+
+```sh
+sudo leafpad /etc/xdg/autostart/atms.desktop
+[Desktop Entry]
+Name=ATMS
+Comment=ATMS
+Exec=/home/pi/Desktop/ATMS.sh
+Terminal=true
+Type=Application
+OnlyShowIn=GNOME;XFCE;LXDE;Unity;
+X-GNOME-Autostart-enabled=true
+```
 ---
 
 Mar 31, 2017 - Updated by [aj](https://github.com/ajstadlin)  
