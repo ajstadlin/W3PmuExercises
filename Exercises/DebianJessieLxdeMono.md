@@ -50,7 +50,7 @@ The virtual machines are created with a clean operating system and software inst
     - WiFi Ethernet with Internet access
 
 #### `W3PMU-DEBLM` Debian Virtual Machine
-    - OS = Debian Jessie 8.7.1 amd64 from netinst.iso 
+    - OS = Debian Jessie 8.8.0 amd64 from netinst.iso 
     - Software = [mono](http://www.mono-project.com/)
     - CPU = 3 virtual cores
     - RAM = 3072 MB
@@ -91,15 +91,15 @@ Do the following on the *Host Server*:
 
 #### Virtual Machine Setup
 
-This example uses a minimal installation with [Debian 8.7.1 netinst.iso for amd64](http://mirrors.kernel.org/debian-cd/8.7.1/amd64/iso-cd/debian-8.7.1-amd64-netinst.iso) from [Mirrors.Kernel.org](http://mirrors.kernel.org).
+This example uses a minimal installation with [Debian 8.8.0 netinst.iso for amd64](http://mirrors.kernel.org/debian-cd/8.8.0/amd64/iso-cd/debian-8.8.0-amd64-netinst.iso) from [Mirrors.Kernel.org](http://mirrors.kernel.org).
 
 ---
 
 ## `W3PMU-DEBLM` Virtual Machine Initial Setup
 
-1. Download the `debian-8.7.1-amd64-netinst.iso` file to the [`W3PMU-VBOX`](#w3pmu-vbox-virtualbox-host-server) server
+1. Download the `debian-8.8.0-amd64-netinst.iso` file to the [`W3PMU-VBOX`](#w3pmu-vbox-virtualbox-host-server) server
 2. On the [`W3PMU-VBOX`](#w3pmu-vbox-virtualbox-host-server) server: create the [`W3PMU-DEBLM`](#w3pmu-deblm-debian-virtual-machine) virtual machine
-    - Configure [`W3PMU-DEBLM`](#w3pmu-deblm-debian-virtual-machine) VirtualBox *Settings* as described in the earlier [Platform Configuration](#platform-configuration) section and assign the `debian-8.7.1-amd64-netinst.iso` image file to its DVD drive.
+    - Configure [`W3PMU-DEBLM`](#w3pmu-deblm-debian-virtual-machine) VirtualBox *Settings* as described in the earlier [Platform Configuration](#platform-configuration) section and assign the `debian-8.8.0-amd64-netinst.iso` image file to its DVD drive.
 3. Start the `W3PMU-DEBLM` virtual machine and run the Debian installation. 
 	- In the *Configure the network / Please enter the hostname* dialog, set the *Hostname* to `w3pmu-deblm` then press the *Enter* key to *Continue*
 	- In the *Configure the network / Domain Name* dialog, set the *Domain name* to `w3pmu.com` then press the *Enter* key to *Continue*
@@ -168,9 +168,9 @@ sudo apt-get install build-essential gettext libssl-dev libcurl4-openssl-dev lib
 # Change to Home folder
 cd ~
 # Get git
-wget https://www.kernel.org/pub/software/scm/git/git-2.12.2.tar.gz 
-tar -xzvf git-2.12.2.tar.gz
-cd git-2.12.2
+wget https://www.kernel.org/pub/software/scm/git/git-2.13.0.tar.gz 
+tar -xzvf git-2.13.0.tar.gz
+cd git-2.13.0
 # Make Git and Install 
 make prefix=/usr/local all 
 # make prefix=/usr/local all doc info
