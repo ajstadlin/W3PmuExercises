@@ -246,7 +246,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install mono-devel -y
 sudo apt-get install mono-complete -y
-sudo apt-get install referenceassemblies-pcl -y
+# sudo apt-get install referenceassemblies-pcl -y
 sudo apt-get install ca-certificates-mono
 # sudo apt-get install mono-xsp4
 ```
