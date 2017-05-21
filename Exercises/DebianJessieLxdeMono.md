@@ -29,7 +29,9 @@ This is a *cookbook recipe* style exercise procedure for setting up a Debian Jes
 	- [Install Optional Utility Software](#install-optional-utility-software)
 	- [Disable Console Screen Blanking](#disable-console-screen-blanking)
 	- [XSet Keyboard Repeat Rate](#xset-keyboard-repeat-rate)
-	
+- [Additional Software](#additional-software)
+    - [VSCode](#vscode)
+    
 ---
 
 ## Platform
@@ -364,9 +366,25 @@ Type=Application
 OnlyShowIn=GNOME;XFCE;LXDE;Unity;
 X-GNOME-Autostart-enabled=true
 ```
+
 ---
 
-Mar 31, 2017 - Updated by [aj](https://github.com/ajstadlin)  
+## Additional Software
+
+### VSCode
+
+```sh
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+# Then update the package cache and install the package using:
+sudo apt-get update
+sudo apt-get install code # or code-insiders
+```
+
+---
+
+May 20, 2017 - Updated by [aj](https://github.com/ajstadlin)  
 Jan 2, 2017 - Created by [aj](https://github.com/ajstadlin)
 
 ---
