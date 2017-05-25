@@ -30,6 +30,7 @@ This is a *cookbook recipe* style exercise procedure for setting up a Debian Jes
 	- [Disable Console Screen Blanking](#disable-console-screen-blanking)
 	- [XSet Keyboard Repeat Rate](#xset-keyboard-repeat-rate)
 - [Additional Software](#additional-software)
+    - [VirtualBox Guest Additions](#virtualbox-guest-additions)
     - [VSCode](#vscode)
     
 ---
@@ -371,6 +372,13 @@ X-GNOME-Autostart-enabled=true
 
 ## Additional Software
 
+### VirtualBox Guest Additions
+
+```sh
+# Prerequisites required to install VirtualBox Guest Additions in Debian 8.8.0
+sudo apt-get install build-essential linux-headers-$(uname -r)
+```
+
 ### VSCode
 
 ```sh
@@ -385,7 +393,7 @@ sudo apt-get install code # or code-insiders
 
 ---
 
-May 20, 2017 - Updated by [aj](https://github.com/ajstadlin)  
+May 25, 2017 - Updated by [aj](https://github.com/ajstadlin)  
 Jan 2, 2017 - Created by [aj](https://github.com/ajstadlin)
 
 ---
