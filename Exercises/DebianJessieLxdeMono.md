@@ -159,28 +159,9 @@ $ reboot
 
 Now that the base Debian operating system is installed and the machine has an IP address, it is probably easier to access the `W3PMU-DEBLM` machine using an **ssh** client that allows copy/paste clipboard. If you are running VirtualBox on a Windows *Host Server* as described for this exercise's `W3PMU-VBOX` laptop, then using Git's MINGW bash shell has a nice **ssh** console. In the Git console, simply run `ssh <your_username>@w3pmu-deblm`
 
-### Git
-
-Building *Git* is not really required to install and run *openPDC*, however, downloading and building the latest version of *Git* is a good way to install some prerequisites we need later to build *openPDC*
-
+### CA Certificates
 ```sh
-# Install Git prerequisites
-sudo apt-get install ca-certificates xz-utils -y
-sudo apt-get install build-essential gettext libssl-dev libcurl4-openssl-dev libexpat1-dev tk-dev asciidoc -y
-# sudo apt-get install docbook2x unzip -y
-# Change to Home folder
-cd ~
-# Get git
-wget https://www.kernel.org/pub/software/scm/git/git-2.13.2.tar.gz 
-tar -xzvf git-2.13.2.tar.gz
-cd git-2.13.2
-# Make Git and Install 
-make prefix=/usr/local all 
-# make prefix=/usr/local all doc info
-sudo make prefix=/usr/local install all 
-# sudo make prefix=/usr/local install all install-doc install-html install-info
-# Test Git
-git –version
+sudo apt-get install ca-certificates -y
 ```
 
 ### NTP
@@ -194,13 +175,37 @@ Network Time Protocol *NTP* is used to synchronize the computer's time clock wit
 # Install NTP
 sudo apt-get install ntp
 # Optionally modify the time servers and other ntp options
-sudn nano /etc/ntp.conf
+sudo nano /etc/ntp.conf
 # Apply configuration changes
 sudo dpkg-reconfigure ntp
 # Check
 sudo ntpd --version
 sudo ntpq -p
 sudo service ntp status
+```
+
+### Git
+
+Building *Git* is not really required to install and run *openPDC*, however, downloading and building the latest version of *Git* is a good way to install some prerequisites we need later to build *openPDC*
+
+```sh
+# Install Git prerequisites
+sudo apt-get install xz-utils -y
+sudo apt-get install build-essential gettext libssl-dev libcurl4-openssl-dev libexpat1-dev tk-dev asciidoc -y
+# sudo apt-get install docbook2x unzip -y
+# Change to Home folder
+cd ~
+# Get git
+wget https://www.kernel.org/pub/software/scm/git/git-2.13.3.tar.gz 
+tar -xzvf git-2.13.3.tar.gz
+cd git-2.13.3
+# Make Git and Install 
+make prefix=/usr/local all 
+# make prefix=/usr/local all doc info
+sudo make prefix=/usr/local install all 
+# sudo make prefix=/usr/local install all install-doc install-html install-info
+# Test Git
+git –version
 ```
 
 ### Python
@@ -281,7 +286,7 @@ mono --version
 
 GUI installation instructions are derived from the procedure described in: [GUIDE Raspbian Lite with LXDE/XFCE/MATE/Openbox GUI](https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=133691)
 
-```
+```sh
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get dist-upgrade
