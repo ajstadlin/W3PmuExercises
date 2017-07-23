@@ -226,9 +226,9 @@ sudo make install
 python2 --version
 # Python 3
 cd ~/
-wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tar.xz 
-tar -xvf Python-3.6.1.tar.xz
-cd Python-3.6.1
+wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz 
+tar -xvf Python-3.6.2.tar.xz
+cd Python-3.6.2
 ./configure
 make
 sudo make install
@@ -311,7 +311,7 @@ sudo reboot
 ... login ...
 startx
 
-sudo apt-get install lightdm
+# sudo apt-get install lightdm
 sudo nano /etc/lightdm/lightdm.conf
 	autologin-user=pi
 	autologin-user-timeout=0
@@ -320,14 +320,14 @@ sudo dpkg-reconfigure lightdm
 
 ### Install Optional Utility Software
 
-```
+```sh
 sudo apt-get install htop ntpdate freerdp-x11 x11vnc lxterminal leafpad clipit -y
 sudo reboot
 ```
 
 ### Disable Console Screen Blanking
 
-```
+```sh
 sudo nano /etc/X11/xorg.conf
 Section "Monitor"
     Identifier "Monitor"
