@@ -53,7 +53,7 @@ XKBLAYOUT="us"
 
 * *Localisation Options*
     * *Change Locale*
-        * Unset **en_GB**
+        * Clear **en_GB**
         * Set **en_US.UTF-8 UTF-8**
     * *Change Timezone*
 * *Interfacing Options*
@@ -226,6 +226,7 @@ sudo reboot
 
 ## LightDM
 
+Optionally configure **autologin** options in the desktop manager. This simplifies remote control connectivity.
 ```sh
 sudo nano /etc/lightdm/lightdm.conf
   autologin-user=theusername
