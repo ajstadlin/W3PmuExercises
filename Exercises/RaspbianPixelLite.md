@@ -252,4 +252,4 @@ sudo apt-get install freerdp-x11
 
 ---
 
-Jul 28, 2017 updated by [//AJ](http://atc-gogs.accuratetool.com:3000/aj)
+Jul 28, 2017 updated by [//AJ](https://github.com/ajstadlin)
