@@ -1,15 +1,16 @@
-# Rasberry Pi Procedures and Notes
+# Rasberry Pi - Raspbian Lite with PIXEL
 
 <!-- TOC -->
 
-- [Rasberry Pi Procedures and Notes](#rasberry-pi-procedures-and-notes)
+- [Rasberry Pi - Raspbian Lite with PIXEL](#rasberry-pi---raspbian-lite-with-pixel)
 - [Base Build Procedure](#base-build-procedure)
     - [Source ISO](#source-iso)
     - [First Running](#first-running)
         - [Configure Keyboard](#configure-keyboard)
         - [raspi-config](#raspi-config)
         - [Wireless](#wireless)
-            - [/etc/network/interfaces](#etcnetworkinterfaces)
+            - [Edit */etc/network/interfaces*](#edit-etcnetworkinterfaces)
+                - [Edit */etc/resolv.conf*](#edit-etcresolvconf)
         - [Get IP Address and Updates](#get-ip-address-and-updates)
         - [Disable Console Blanking](#disable-console-blanking)
     - [Initial Software](#initial-software)
@@ -21,9 +22,9 @@
                 - [Server](#server)
                 - [Clients](#clients)
         - [Python](#python)
-- [X11 and LXDE Installation](#x11-and-lxde-installation)
+- [X11 and PIXEL Installation](#x11-and-pixel-installation)
     - [X11 XServer](#x11-xserver)
-    - [LXDE](#lxde)
+    - [PIXEL](#pixel)
     - [LightDM](#lightdm)
         - [Remote Control Software](#remote-control-software)
     - [Utility Software](#utility-software)
@@ -53,7 +54,7 @@ XKBLAYOUT="us"
 
 * *Localisation Options*
     * *Change Locale*
-        * Clear **en_GB**
+        * Unset **en_GB**
         * Set **en_US.UTF-8 UTF-8**
     * *Change Timezone*
 * *Interfacing Options*
@@ -65,14 +66,33 @@ XKBLAYOUT="us"
 
 * [Reference](http://www.raspberrypi.org/phpBB3/viewtopic.php?f=28&t=44044)
 
-#### /etc/network/interfaces
+#### Edit */etc/network/interfaces*
 
 ```sh
-sudo nano /etc/network/interfaces
 allow-hotplug wlan0
 iface wlan0 inet dhcp
+
+## static ip address example
+#iface eth0 inet static
+#address 192.168.1.142
+#netmask 255.255.255.0
+#gateway 192.168.1.1
+#broadcast 192.168.1.255
+#network 192.168.1.0
+#dns-nameservers 192.168.1.249
+
+# WiFi
 wpa-ssid ******
 wpa-psk ******
+```
+
+##### Edit */etc/resolv.conf*
+
+```sh
+# example settings
+domain w3pmu.com
+search w3pmu.com
+nameserver 192.168.0.56
 ```
 
 ### Get IP Address and Updates
@@ -202,7 +222,7 @@ sudo reboot
 python --version
 ```
 
-# X11 and Pixel Installation
+# X11 and PIXEL Installation
 
 GUI installation instructions are derived from the procedure described in: [GUIDE Raspbian Lite with LXDE/XFCE/MATE/Openbox GUI](https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=133691)
 
@@ -215,18 +235,18 @@ sudo apt-get install xinit x11-xserver-utils xorg
 sudo reboot
 ```
 
-## Pixel
+## PIXEL
 
 ```sh
-# Raspbian PIXEL
-# sudo rpi-update
+# Raspbian PIXEL instead of LXDE
 sudo apt-get install raspberrypi-ui-mods
 sudo reboot
 ```
 
 ## LightDM
 
-Optionally configure **autologin** options in the desktop manager. This simplifies remote control connectivity.
+Optionally configure **autologin** for simplified remote control.
+
 ```sh
 sudo nano /etc/lightdm/lightdm.conf
   autologin-user=theusername
@@ -253,4 +273,4 @@ sudo apt-get install freerdp-x11
 
 ---
 
-Jul 28, 2017 updated by [//AJ](https://github.com/ajstadlin)
+Jul 28, 2017 updated by [//AJ](http://atc-gogs.accuratetool.com:3000/aj)
